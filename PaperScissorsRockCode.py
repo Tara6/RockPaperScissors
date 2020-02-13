@@ -23,12 +23,6 @@ while roundcount < rounds:
     print("3. Scissors")
     firstplayerchoice = int(input("Enter your choice (without someone seeing): "))
 
-    print(secondplayer, "please choose your weapon")
-    print("1. Rock")
-    print("2. Paper")
-    print("3. Scissors")
-    secondplayerchoice = int(input("Enter your choice (without someone seeing): "))
-
     if firstplayerchoice == 1:
         firstplayerweapon = "Rock"
     elif firstplayerchoice == 2:
@@ -38,6 +32,13 @@ while roundcount < rounds:
     else:
         firstplayerweapon = "Invalid choice"
 
+    print(firstplayer, "chose", firstplayerweapon)
+
+    print(secondplayer, "please choose your weapon")
+    print("1. Rock")
+    print("2. Paper")
+    print("3. Scissors")
+    secondplayerchoice = int(input("Enter your choice (without someone seeing): "))
 
     if secondplayerchoice == 1:
         secondplayerweapon = "Rock"
@@ -46,7 +47,9 @@ while roundcount < rounds:
     elif secondplayerchoice == 3:
         secondplayerweapon = "Scissors"
     else:
-        secondplayerweapon = "Invalid choice"   
+        secondplayerweapon = "Invalid choice"  
+
+    print(secondplayer, "chose", secondplayerweapon) 
 
     print("Results:", firstplayer, "(",firstplayerweapon,")", "vs", secondplayer,"(", secondplayerweapon,")")
 
