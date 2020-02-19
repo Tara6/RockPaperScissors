@@ -2,7 +2,7 @@ import random
 playerBwins = 0
 playerAwins = 0
 roundcount = 0
-print("Welcome to Rock, Paper, Scissors")
+print("Welcome to Rock, Paper, Scissors. In this game, You will verse one other willing player in the simple game of Rock paper scissors Python edition!")
 rounds = int(input("How many rounds do you want to play?: "))
 playerA = input("Please enter your name player A: ")
 playerB = input("Please enter your name player B: ")
