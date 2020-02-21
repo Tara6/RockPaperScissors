@@ -1,11 +1,39 @@
+import playerInformation
 import random
 playerBwins = 0
 playerAwins = 0
 roundcount = 0
+
+def firstPlayerWeapon(weaponA):
+  if weaponA == 1:
+        firstplayerweapon = "Rock"
+        return firstplayerweapon
+  elif weaponA == 2:
+        firstplayerweapon = "Paper"
+        return firstplayerweapon
+  elif weaponA == 3:
+        firstplayerweapon = "Scissors"
+        return firstplayerweapon
+  else:
+        firstplayerweapon = "Invalid choice"
+        return firstplayerweapon
+
+def secondPlayerWeapon(weaponB):
+  if weaponB == 1:
+        secondplayerweapon = "Rock"
+        return secondplayerweapon
+  elif weaponB == 2:
+        secondplayerweapon = "Paper"
+        return secondplayerweapon
+  elif weaponB == 3:
+        secondplayerweapon = "Scissors"
+        return secondplayerweapon
+  else:
+        secondplayerweapon = "Invalid choice"
+        return secondplayerweapon
+
 print("Welcome to Rock, Paper, Scissors. In this game, You will verse one other willing player in the simple game of Rock paper scissors Python edition!")
-rounds = int(input("How many rounds do you want to play?: "))
-playerA = input("Please enter your name player A: ")
-playerB = input("Please enter your name player B: ")
+rounds, playerA, playerB = playerInformation.playerInfo()
 
 while roundcount < rounds:
     playerturn = random.randint(1, 2)
@@ -16,42 +44,10 @@ while roundcount < rounds:
         firstplayer = playerB
         secondplayer = playerA
 
-    print(firstplayer, "has been chosen to start the game")
-    print(firstplayer, "please choose your weapon")
-    print("1. Rock")
-    print("2. Paper")
-    print("3. Scissors")
-    firstplayerchoice = int(input("Enter your choice (without someone seeing): "))
+    firstplayerchoice = playerInformation.firstPlayerChoice(firstplayer)
+    secondplayerchoice = playerInformation.secondPlayerChoice(secondplayer)
 
-    if firstplayerchoice == 1:
-        firstplayerweapon = "Rock"
-    elif firstplayerchoice == 2:
-        firstplayerweapon = "Paper"
-    elif firstplayerchoice == 3:
-        firstplayerweapon = "Scissors"
-    else:
-        firstplayerweapon = "Invalid choice"
-
-    print(firstplayer, "chose", firstplayerweapon)
-
-    print(secondplayer, "please choose your weapon")
-    print("1. Rock")
-    print("2. Paper")
-    print("3. Scissors")
-    secondplayerchoice = int(input("Enter your choice (without someone seeing): "))
-
-    if secondplayerchoice == 1:
-        secondplayerweapon = "Rock"
-    elif secondplayerchoice == 2:
-        secondplayerweapon = "Paper"
-    elif secondplayerchoice == 3:
-        secondplayerweapon = "Scissors"
-    else:
-        secondplayerweapon = "Invalid choice"  
-
-    print(secondplayer, "chose", secondplayerweapon) 
-
-    print("Results:", firstplayer, "(",firstplayerweapon,")", "vs", secondplayer,"(", secondplayerweapon,")")
+    print("Results:", firstplayer, "(",firstPlayerWeapon(firstplayerchoice),")", "vs", secondplayer,"(", secondPlayerWeapon(secondplayerchoice),")")
 
     if firstplayerchoice == 1 and secondplayerchoice == 3 or firstplayerchoice == 2 and secondplayerchoice == 1 or firstplayerchoice == 3 and secondplayerchoice == 2:
         print("Congratulations", firstplayer, "you've won the match!")
@@ -70,6 +66,7 @@ while roundcount < rounds:
     else:
         print("Invalid choice. Remeber to input a number between 1 and 3")
         roundcount -= 1
+        
     print(playerA, "total wins: ", playerAwins)
     print(playerB, "total wins: ", playerBwins)
     roundcount += 1
@@ -82,3 +79,10 @@ elif playerBwins > playerAwins:
 else:
     print("Tie game!")
 print("Total Score:", playerA, "-", playerAwins, "|", playerB, "-", playerBwins)
+
+
+
+
+
+
+
